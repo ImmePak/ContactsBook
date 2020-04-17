@@ -4,46 +4,46 @@
 >
     <div class="from-field">
         <label class="input-label">
-            Фамилия:
-            <input
-                type="text"
-                formControlName="surname"
-                [ngClass]="{'alerted': isSurnameInvalid && !surname.touched }"
-            >
-            <span class="required">*</span>
+            Фамилия:            
         </label>
+        <input
+            type="text"
+            formControlName="surname"
+            [ngClass]="{'alerted': isSurnameInvalid && !surname.touched }"
+        >
+        <span class="required">*</span>
         <ng-container *ngIf="isSurnameInvalid && !surname.touched; then genericError"></ng-container>
     </div>
     <div class="from-field">
         <label class="input-label">
-            Имя:
-            <input
-                type="text"
-                formControlName="firstname"
-            >
+            Имя:            
         </label>
+        <input
+            type="text"
+            formControlName="firstname"
+        >
     </div>
     <div class="from-field">
         <label class="input-label">
-            Отчество:
-            <input
-                type="text"
-                formControlName="patronymic"
-            >
+            Отчество:            
         </label>
+        <input
+            type="text"
+            formControlName="patronymic"
+        >
     </div>
     <div class="from-field">
         <label class="input-label">
-            Телефон:
-            <input
-                type=" text"
-                formControlName="phoneNumber"
-                prefix="+7"
-                mask="(000) 000-00-00"
-                [ngClass]="{'alerted': isPhoneNumberInvalid && !phoneNumber.touched}"
-            >
-            <span class="required">*</span>
+            Телефон:            
         </label>
+        <input
+            type=" text"
+            formControlName="phoneNumber"
+            prefix="+7"
+            mask="(000) 000-00-00"
+            [ngClass]="{'alerted': isPhoneNumberInvalid && !phoneNumber.touched}"
+        >
+        <span class="required">*</span>
         <ng-container *ngIf="isPhoneNumberInvalid && !phoneNumber.touched; then genericError"></ng-container>
     </div>
     <button
