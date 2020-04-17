@@ -1,0 +1,7 @@
+<app-contact-form (contactSubmited)="handleAddition($event)"></app-contact-form>
+<app-contacts-table
+    [contacts]='contacts'
+    (markAsFavourite)='markContactFavourite($event)'
+    (markAsCommon)='markContactCommon($event)'
+    (delete)='deleteContact($event)'
+></app-contacts-table>

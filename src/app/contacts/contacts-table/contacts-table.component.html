@@ -1,0 +1,48 @@
+<table class='contacts-table'>
+    <tr class="border_bottom">
+        <th></th>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Телефон</th>
+        <th></th>
+    </tr>
+    <tr
+        *ngFor="let contact of contacts | async"
+        class="border_bottom"
+    >
+        <td>
+            <ng-container *ngIf="contact.favourite; else common">
+                <span
+                    (click)="onMarkAsCommon(contact.id)"
+                    class="favourite-icon span-button"
+                    title="Удалить из избранного"
+                >
+                    <app-favourite-svg></app-favourite-svg>
+                </span>
+            </ng-container>
+            <ng-template #common>
+                <span
+                    (click)="onMarkAsFavourite(contact.id)"
+                    class="span-button"
+                    title="В избранное"
+                >
+                    <app-common-svg></app-common-svg>
+                </span>
+            </ng-template>
+        </td>
+        <td>{{contact.surname}}</td>
+        <td>{{contact.firstname}}</td>
+        <td>{{contact.patronymic}}</td>
+        <td>{{contact.phoneNumber | phone}}</td>
+        <td>
+            <span
+                (click)="onDelete(contact.id)"
+                class="delete-icon span-button"
+                title="Удалить"
+            >
+                <app-remove-svg></app-remove-svg>
+            </span>
+        </td>
+    </tr>
+</table>

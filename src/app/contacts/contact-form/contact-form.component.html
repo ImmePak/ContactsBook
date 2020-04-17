@@ -1,0 +1,57 @@
+<form
+    [formGroup]="contactForm"
+    class="horsontal-form"
+>
+    <div class="from-field">
+        <label class="input-label">
+            Фамилия:
+            <input
+                type="text"
+                formControlName="surname"
+                [ngClass]="{'alerted': isSurnameInvalid && !surname.touched }"
+            >
+            <span class="required">*</span>
+        </label>
+        <ng-container *ngIf="isSurnameInvalid && !surname.touched; then genericError"></ng-container>
+    </div>
+    <div class="from-field">
+        <label class="input-label">
+            Имя:
+            <input
+                type="text"
+                formControlName="firstname"
+            >
+        </label>
+    </div>
+    <div class="from-field">
+        <label class="input-label">
+            Отчество:
+            <input
+                type="text"
+                formControlName="patronymic"
+            >
+        </label>
+    </div>
+    <div class="from-field">
+        <label class="input-label">
+            Телефон:
+            <input
+                type=" text"
+                formControlName="phoneNumber"
+                prefix="+7"
+                mask="(000) 000-00-00"
+                [ngClass]="{'alerted': isPhoneNumberInvalid && !phoneNumber.touched}"
+            >
+            <span class="required">*</span>
+        </label>
+        <ng-container *ngIf="isPhoneNumberInvalid && !phoneNumber.touched; then genericError"></ng-container>
+    </div>
+    <button
+        class="submit-button"
+        (click)="onSubmit()"
+        title="Добавить"
+    >+</button>
+    <ng-template #genericError>
+        <div class="alert-text">Обязательное поле</div>
+    </ng-template>
+</form>

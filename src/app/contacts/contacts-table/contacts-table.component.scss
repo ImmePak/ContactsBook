@@ -1,0 +1,31 @@
+.contacts-table {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    border-collapse: collapse; 
+}
+
+.contacts-table tr {
+  border-top: 1px solid #e6e8e6;
+}
+
+.contacts-table td, th {
+    padding: 0.5rem 0;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.span-button {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    cursor: pointer;
+}
+
+.delete-icon {
+    color: red;
+}
+
+.favourite-icon {
+    color: gold;
+}

@@ -1,0 +1,43 @@
+$alert-color: red;
+
+.horsontal-form {     
+    width: 80%;
+    margin: auto;
+}
+
+.from-field {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.alerted {
+    border-color: $alert-color;
+}
+
+.alert-text {
+    color: $alert-color;
+    font-size: 0.8rem;
+    position: absolute;
+}
+
+.input-label {
+    display: block;    
+    width: 12rem;   
+}
+
+.required {
+    color: $alert-color;
+  }
+
+.submit-button {
+    background-color: #24ed56; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
